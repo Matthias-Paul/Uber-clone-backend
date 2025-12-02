@@ -25,3 +25,14 @@ export const loginValidation = [
     .withMessage("Valid email is required"),
   body("password").notEmpty().withMessage("Password is required"),
 ];
+
+  export const verifyEmailTokenValidation = [
+    body("token")
+      .notEmpty()
+      .withMessage("Verification token is required")
+      .isLength({ min: 6 })
+      .withMessage("Token must be at least 6 numbers"),
+
+  ];
+
+
