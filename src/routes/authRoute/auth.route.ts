@@ -10,14 +10,14 @@ import {
 
 const router = express.Router();
 
-router.post("/register", registerValidation, registerUsers);
+router.post("/auth/register", registerValidation, registerUsers);
 router.post(
-  "/verify-email",
+  "/auth/verify-email",
   verifyEmailTokenValidation,
   verifyUser,
   verifyEmailToken
 );
 
-router.post("/login", loginValidation, loginUsers);
+router.post("/auth/login", loginValidation, loginUsers);
 
 export default router;
