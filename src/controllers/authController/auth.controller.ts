@@ -132,15 +132,14 @@ export const verifyEmailToken = async (
   }
 
   try {
-    const userId = req.user._id;
-    const { token } = matchedData(req);
+    const { token, email } = matchedData(req);
 
-    const user = await User.findOne({ _id: userId });
+    const user = await User.findOne({ email: email });
     if (!user) {
       res.status(400).json({
         statusCode: 400,
         success: false,
-        message: "Invalid token",
+        message: "Invalid User",
       });
       return;
     }

@@ -14,7 +14,6 @@ router.post("/auth/register", registerValidation, registerUsers);
 router.post(
   "/auth/verify-email",
   verifyEmailTokenValidation,
-  verifyUser,
   verifyEmailToken
 );
 

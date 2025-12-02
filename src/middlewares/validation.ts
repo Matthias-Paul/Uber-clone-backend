@@ -32,7 +32,11 @@ export const loginValidation = [
       .withMessage("Verification token is required")
       .isLength({ min: 6 })
       .withMessage("Token must be at least 6 numbers"),
-
+    body("email")
+      .notEmpty()
+      .withMessage("Email is required")
+      .isEmail()
+      .withMessage("Valid email is required"),
   ];
 
 
