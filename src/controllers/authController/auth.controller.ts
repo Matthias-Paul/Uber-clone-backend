@@ -111,6 +111,7 @@ export const registerUsers = async (
       statusCode: 500,
       success: false,
       message: "Internal Server Error",
+      error
     });
   }
 };
